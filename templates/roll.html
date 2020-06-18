@@ -1,0 +1,44 @@
+<!doctype html>
+<title>Catan Events -- by hwp</title>
+<p>{{ dice1 }} + {{ dice2 }} = </p>
+<h1>{{ dice_sum }}!</h1>
+<p>with event:<p>
+<h1>{{ event }}</h1>
+<h2>
+  <a href="/roll">Roll</a>
+</h2>
+<table>
+  <tr>
+    <th colspan="2">
+      Dice Statistics
+    </th>
+  </tr>
+  {% for t, c in dice_count %}
+    <tr>
+      <td>
+        {{ t }}
+      </td>
+      <td>
+        {{ c }}
+      </td>
+    </tr>
+  {% endfor %}
+</table>
+<table>
+  <tr>
+    <th colspan="2">
+      Event Statistics
+    </th>
+  </tr>
+  {% for t, c in event_count %}
+    <tr>
+      <td>
+        {{ t }}
+      </td>
+      <td>
+        {{ c }}
+      </td>
+    </tr>
+  {% endfor %}
+</table>
+<a href="/reset">reset statistics</a>
