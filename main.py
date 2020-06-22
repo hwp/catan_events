@@ -9,7 +9,8 @@ import secrets
 
 from flask import Flask, render_template, redirect, url_for, session
 app = Flask(__name__, static_folder='.')
-app.secret_key = secrets.token_bytes(16)
+with open('secret_key', 'rb') as f:
+    app.secret_key = f.read()
 
 _EVENT_LIST = [
     'Robber Attack',
