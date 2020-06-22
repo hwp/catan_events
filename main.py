@@ -45,11 +45,6 @@ _EVENT_CHANCE = [
 _EVENT_CHOICES = [x for e, c in enumerate(_EVENT_CHANCE) for x in [e] * c]
 
 
-@app.route('/')
-def index():
-    return app.send_static_file('index.html')
-
-
 @app.route('/roll')
 def roll():
     # roll dice
