@@ -1,0 +1,11 @@
+[Unit]
+Description=Gunicorn instance to serve catan events
+Requires=catan.socket
+After=network.target
+
+[Service]
+User=hwp
+Group=nginx
+WorkingDirectory=/home/hwp/workspace/catan_events
+#Environment="PATH=/home/user/myproject/myprojectenv/bin"
+ExecStart=/usr/bin/gunicorn --workers 3 --bind /run/gunicorn.sock wsgi:app
